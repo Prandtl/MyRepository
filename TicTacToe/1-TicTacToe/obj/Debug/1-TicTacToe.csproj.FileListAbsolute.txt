@@ -1,6 +1,0 @@
-C:\Users\Василий\Desktop\MyRepository\TicTacToe\1-TicTacToe\bin\Debug\1-TicTacToe.exe.config
-C:\Users\Василий\Desktop\MyRepository\TicTacToe\1-TicTacToe\bin\Debug\1-TicTacToe.exe
-C:\Users\Василий\Desktop\MyRepository\TicTacToe\1-TicTacToe\bin\Debug\1-TicTacToe.pdb
-C:\Users\Василий\Desktop\MyRepository\TicTacToe\1-TicTacToe\obj\Debug\1-TicTacToe.csprojResolveAssemblyReference.cache
-C:\Users\Василий\Desktop\MyRepository\TicTacToe\1-TicTacToe\obj\Debug\1-TicTacToe.exe
-C:\Users\Василий\Desktop\MyRepository\TicTacToe\1-TicTacToe\obj\Debug\1-TicTacToe.pdb

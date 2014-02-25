@@ -1,0 +1,6 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Permutations\FlipGame\FlipGame\bin\Debug\FlipGame.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Permutations\FlipGame\FlipGame\obj\Debug\FlipGame.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Permutations\FlipGame\FlipGame\bin\Debug\FlipGame.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Permutations\FlipGame\FlipGame\bin\Debug\FlipGame.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Permutations\FlipGame\FlipGame\obj\Debug\FlipGame.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Permutations\FlipGame\FlipGame\obj\Debug\FlipGame.pdb

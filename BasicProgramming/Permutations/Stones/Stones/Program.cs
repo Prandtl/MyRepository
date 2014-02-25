@@ -11,7 +11,7 @@ namespace Stones
     {
         static IEnumerable<bool[]> Subsets(int N)
         {
-            var max = 1 << (N);
+            var max = 1 << N;
             for (long number = 0; number < max; number++)
             {
                 var mask = 1;
@@ -22,7 +22,6 @@ namespace Stones
                     mask <<= 1;
                 }
                 yield return subset.ToArray();
-
             }
         }
 

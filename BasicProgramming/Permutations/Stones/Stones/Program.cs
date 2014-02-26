@@ -35,7 +35,7 @@ namespace Stones
             int minDifference = sum;
             foreach (var e in Subsets(weight.Length))
             {
-                int subsetSum = 0;
+                int subsetSum = e.Where();//linq
                 int t = 0;
                 foreach (var c in e)
                 {

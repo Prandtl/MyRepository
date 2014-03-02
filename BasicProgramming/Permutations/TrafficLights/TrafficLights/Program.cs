@@ -9,32 +9,8 @@ namespace TrafficLights
 {
     class Program
     {
-        
-        //static bool IsConsistent(bool[] subset)
-        //{
-        //    for (int i = 0; i < 12; i++)
-        //    {
-        //        if
-        //    }
-        //}
 
-        //static IEnumerable<bool[]> Subsets(int N)
-        //{
-        //    var max = 1 << N;
-        //    for (long number = 0; number < max; number++)
-        //    {
-        //        var mask = 1;
-        //        var subset = new bool[N];
-        //        for (int j = N - 1; j >= 0; j--)
-        //        {
-        //            subset[j] = (number & mask) != 0;
-        //            mask <<= 1;
-        //        }
-        //        yield return subset.ToArray();
-        //    }
-        //}
-
-        static Dictionary<int, int[]> blockRoads = new Dictionary<int, int[]>{{1,new int[]{8,10}},
+        static Dictionary<int, int[]> blockRoads = new Dictionary<int, int[]>{{1,new int[]{9,11}},
                                                                            {2,new int[]{4,5,6,9,11,12}},
                                                                            {3,new int[]{5,6,7,8,11,12}},
                                                                            {4,new int[]{2,12}},
@@ -46,13 +22,6 @@ namespace TrafficLights
                                                                            {10,new int[]{6,8}},
                                                                            {11,new int[]{1,2,3,6,8,9}},
                                                                            {12,new int[]{2,3,4,5,8,9}}};
-
-        //static int FindMaxIndex(int[] amount, int[] velocity)
-        //{
-        //    return 1;
-        //    //
-        //}
-
         static void DrivePlease(int[] amount, int[] velocity)
         {
             int[] roadsStatus = Enumerable.Range(0, 12).Select(x => 1).ToArray();

@@ -1,0 +1,5 @@
+C:\Users\Василий\Desktop\MyRepository\SemanticsCS\SemanticsCS\bin\Debug\SemanticsCS.exe
+C:\Users\Василий\Desktop\MyRepository\SemanticsCS\SemanticsCS\bin\Debug\SemanticsCS.pdb
+C:\Users\Василий\Desktop\MyRepository\SemanticsCS\SemanticsCS\obj\x86\Debug\SemanticsCS.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\SemanticsCS\SemanticsCS\obj\x86\Debug\SemanticsCS.exe
+C:\Users\Василий\Desktop\MyRepository\SemanticsCS\SemanticsCS\obj\x86\Debug\SemanticsCS.pdb

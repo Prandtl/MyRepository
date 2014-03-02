@@ -35,15 +35,11 @@ namespace Stones
             int minDifference = sum;
             foreach (var e in Subsets(weight.Length))
             {
-                int subsetSum = e.Where();//linq
-                int t = 0;
-                foreach (var c in e)
-                {
-                    if (c) subsetSum += weight[t];
-                    t++;
-                }
-
-                if (Math.Abs(sum - 2 * subsetSum) < minDifference) minDifference = Math.Abs(sum - 2 * subsetSum);
+                int subsetSum = e.Select((x,i)=>new Tuple<bool,int>(x,weight[i]))
+                                 .Where(x=>x.Item1)
+                                 .Select(x=>x.Item2)
+                                 .Sum();
+                minDifference = Math.Min(Math.Abs(sum - 2 * subsetSum), minDifference);
 
             }
             Console.WriteLine(minDifference);

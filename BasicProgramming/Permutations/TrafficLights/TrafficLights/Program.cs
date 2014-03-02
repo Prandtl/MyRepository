@@ -47,41 +47,39 @@ namespace TrafficLights
                                                                            {11,new int[]{1,2,3,6,8,9}},
                                                                            {12,new int[]{2,3,4,5,8,9}}};
 
-        static int FindMaxIndex(int[] amount, int[] velocity)
-        {
-            int max = amount.Max();
-            int maxVelocity =0;
-            int maxIndex=-1;
-            for (int i = 0; i < amount.Length; i++)
-            {
-                if (amount[i] == max && velocity[i] > maxVelocity)
-                {
-                    max = amount[i];
-                    maxVelocity = velocity[i];
-                    maxIndex = i;
-                }
-            }
-            return maxIndex;
-        }
+        //static int FindMaxIndex(int[] amount, int[] velocity)
+        //{
+        //    return 1;
+        //    //
+        //}
 
         static void DrivePlease(int[] amount, int[] velocity)
         {
             int[] roadsStatus = Enumerable.Range(0, 12).Select(x => 1).ToArray();
             while (roadsStatus.Contains(1))
             {
-                int openRoad = FindMaxIndex(amount.Where((x,index)=>(roadsStatus[index]==1)).ToArray(), velocity);
-                int ones = 0;
-                for (int i = 0; i < roadsStatus.Length; i++)
-                {
-                    if (ones == openRoad)
-                        openRoad = i;
-                    if (roadsStatus[i] == 1)
-                        ones++;
-                }
-                roadsStatus[openRoad] = 2;
+                int openRoad = roadsStatus.Select((x,i)=>new Tuple<int,int>(x,i))
+                                          .Where(x=>roadsStatus[x.Item2]==1)
+                                          .Select(x=>new Tuple<int,int>(amount[x.Item2]-velocity[x.Item2],x.Item2))
+                                          .OrderByDescending(x=>x.Item1)
+                                          .First()
+                                          .Item2;
                 int[] closedRoads = null;
-                Program.blockRoads.TryGetValue(openRoad,out closedRoads);
-                foreach (int i in closedRoads.Select(x => x - 1).ToArray())
+                Program.blockRoads.TryGetValue(openRoad + 1, out closedRoads);
+                closedRoads = closedRoads.Select(x => x - 1).ToArray();
+                if (roadsStatus.Select((x, i) => new Tuple<int, int>(x, i))
+                               .Where(x => x.Item1 == 2)
+                               .Select(x => x.Item2)
+                               .Intersect(closedRoads)
+                               .ToArray()
+                               .Length == 0)
+                    roadsStatus[openRoad] = 2;
+                else
+                {
+                    roadsStatus[openRoad] = 0;
+                    continue;
+                }
+                foreach (int i in closedRoads.ToArray())
                 {
                     roadsStatus[i] = 0;
                 }
@@ -97,7 +95,7 @@ namespace TrafficLights
 
         static void Main(string[] args)
         {
-            int[] amount = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+           int[] amount = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
             int[] velocity = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
             for (int i = 0; i < 10; i++)
             {

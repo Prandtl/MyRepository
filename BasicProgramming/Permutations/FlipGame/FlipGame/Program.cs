@@ -28,22 +28,20 @@ namespace FlipGame
 
         static bool IsTheWin(int[] field)
         {
-            for (int i = 1; i < field.Length; i++)//linq
-                if (field[i] != field[i - 1]) return false;
-            return true;
+            return field.All(x => x == field[0]);
         }
 
         static void FlipPieces(int[] field, int point)
         {
-            Flip(ref field[point]);//xor
+            field[point] ^= 1;
             if (point - 4 >= 0)
-                Flip(ref field[point - 4]);
+                field[point - 4] ^= 1;
             if (point + 4 < 16)
-                Flip(ref field[point + 4]);
+                field[point + 4] ^= 1;
             if (point % 4 != 0)
-                Flip(ref field[point - 1]);
+                field[point - 1] ^= 1;
             if (point % 4 != 3)
-                Flip(ref field[point + 1]);
+                field[point + 1] ^= 1;
         }
 
         static void Main(string[] args)
@@ -56,7 +54,7 @@ namespace FlipGame
             int minFlips=20;
             foreach (var subset in Subsets(16))
             {
-                int n = 0;//linq
+                int n = 0;
                 for (int i = 0; i < subset.Length; i++)
                 {
                     if (subset[i])

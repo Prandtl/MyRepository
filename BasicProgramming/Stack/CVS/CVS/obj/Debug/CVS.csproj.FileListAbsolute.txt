@@ -1,0 +1,6 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Stack\CVS\CVS\bin\Debug\CVS.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Stack\CVS\CVS\bin\Debug\CVS.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Stack\CVS\CVS\bin\Debug\CVS.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Stack\CVS\CVS\obj\Debug\CVS.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Stack\CVS\CVS\obj\Debug\CVS.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Stack\CVS\CVS\obj\Debug\CVS.pdb

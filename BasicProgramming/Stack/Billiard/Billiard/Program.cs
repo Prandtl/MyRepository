@@ -55,7 +55,6 @@ namespace Billiard
                 if (inside.Peek() == neededBall)
                 {
                     inside.Pop();
-                    continue;
                 }
             }
             Console.WriteLine(flag ? "Not a proof" : "Cheater");

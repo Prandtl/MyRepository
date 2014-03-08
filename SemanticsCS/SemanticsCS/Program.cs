@@ -27,10 +27,7 @@ namespace SemanticsCS
                         }
                     }");
 
-            var root = (CompilationUnitSyntax)tree.GetRoot();
-            var compilation = Compilation.Create("HelloWorld")
-                                 .AddSyntaxTrees(tree);
-
+            Console.WriteLine(tree.Length);
         }
     }
 }

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Hamming</title>
+<script>
+//alert('hello')
+function code()
+{
+	str=document.all.inp_mes.value;
+	mas=str.split('');
+	for(i=0;i<mas.length;i++)
+		mas[i]=parseInt(mas[i]);
+	mas[4]=(mas[0]+mas[1]+mas[3])%2;
+	mas[5]=(mas[0]+mas[2]+mas[3])%2;
+	mas[6]=(mas[1]+mas[2]+mas[3])%2;
+	document.all.cod_mes.value = mas;
+}
+</script>
+</head>
+<body>
+<H1>Hamming encode</H2>
+<input type='text' id='inp_mes'> Входное ссобщение
+<br /><br />
+<input type='button' value='Code' onclick='code()'>
+<br /><br />
+<input type='text' id='cod_mes'> Закодированное ссобщение
+<br /><br />
+</body>
+</html>

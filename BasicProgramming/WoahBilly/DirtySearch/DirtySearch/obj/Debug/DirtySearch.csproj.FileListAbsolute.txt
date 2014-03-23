@@ -1,0 +1,6 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\WoahBilly\DirtySearch\DirtySearch\bin\Debug\DirtySearch.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\WoahBilly\DirtySearch\DirtySearch\bin\Debug\DirtySearch.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\WoahBilly\DirtySearch\DirtySearch\bin\Debug\DirtySearch.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\WoahBilly\DirtySearch\DirtySearch\obj\Debug\DirtySearch.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\WoahBilly\DirtySearch\DirtySearch\obj\Debug\DirtySearch.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\WoahBilly\DirtySearch\DirtySearch\obj\Debug\DirtySearch.pdb

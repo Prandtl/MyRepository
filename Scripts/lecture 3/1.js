@@ -9,21 +9,19 @@ n=0;
 e=0;
 for(i in alph)
 {
-	WSH.echo(i+' '+alph[i]);
-	n=n+alph[i];
-	e=e+1;
+	WSH.echo(alph[i]);
+	e++;
 }
-WSH.echo(n);
 WSH.echo(e);
 entropy=0;
-q=Math.log(n)
-if(e!=1)
+if(e>1)
 {
 	for(i in alph)
 	{
-		alph[i]=alph[i]/n;
-		entropy=entropy+alph[i]*(Math.log(alph[i])/q);
+		fr=alph[i]/str.length;
+		entropy+=fr*(Math.log(fr));
 	}
-	entropy=-entropy;
+	WSH.echo(entropy);
+	entropy=entropy/Math.log(e);
 }
-WSH.echo('entropy is '+entropy);
+WSH.echo('entropy is '+entropy*(-1));

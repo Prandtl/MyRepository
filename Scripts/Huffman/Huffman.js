@@ -7,8 +7,8 @@ function node(name,fr,used,ptr,code)
 	this.ptr=ptr;
 	this.code=code;
 }
-n1=new node('a',5,0,null,'');
-WSH.echo(n1.used);
+
+
 tree=new Array();
 str = 'abracadabra';
 alph=new Array();
@@ -21,24 +21,64 @@ for(i in alph)
 	n=new node(i,alph[i],0,null,'');
 	tree.push(n);
 }
-WSH.echo(tree[1].name,' ',tree[1].fr);
-for(i in tree)
+
+for(i=0;i<tree.length;i++)
+	WSH.echo(tree[i].name,' ',tree[i].fr,' ',tree[i].used);
+WSH.echo('===================');
+	
+length=tree.length;
+for(j=0;j<length-1;j++)
 {
-	m1=tree[0].fr;
-	m1_index=0;
-	m2=tree[0].fr;//m1 and m2 не нужны оставить индексы
-	m2_index=0;
-	if (tree[i]<m1)
+	fr1 = str.length;
+	num1 = 0;
+	for(i=0;i<tree.length;i++)
 	{
-		m2=m1;
-		m2_index=m1_index;
-		m1=tree[i];
-		m1_index=i;
+		if((tree[i].fr<fr1)&&(tree[i].used!=1))
+		{
+			fr1 = tree[i].fr;
+			num1 = i;
+		}
 	}
-	if (tree[i]<m2)
+	WSH.echo(tree[num1].name+' '+tree[num1].used);
+	tree[num1].used = 1;
+	tree[num1].code = 0;
+	tree[num1].link = tree.length-1;
+	fr2 = str.length;
+	num2 = 0;
+	for(i=0;i<tree.length;i++)
 	{
-		m2=tree[i];
-		m2_index=i;
+		if((tree[i].fr<fr2)&&(tree[i].used!=1))
+		{
+			fr2 = tree[i].fr;
+			num2 = i;
+		}
+	}
+	WSH.echo(tree[num2].name+' '+tree[num2].used);
+	tree[num2].used = 1;
+	tree[num2].code = 1;
+	tree[num2].link = tree.length-1;
+	tree.push(new node(tree[num1].name + tree[num2].name, tree[num1].fr + tree[num2].fr, 0, null, ''));
+
+}
+for(i=0;i<tree.length;i++)
+	WSH.echo(tree[i].name,' ',tree[i].fr,' ',tree[i].used)
+	
+
+
+code = new Array();
+for(i=0;i<length;i++)
+{
+	j = i;
+	code[tree[j].name] = '';
+	while(tree[j].link)
+	{
+		code[tree[i].name] = tree[j].code + code[tree[i].name];
+		j = tree[j].link;
+		WSH.echo(j);
+		break;
 	}
 }
-tree.push(new node(tree[m1_index].name+tree[m2_index].name,tree[m1_index].fr+tree[m2_index].fr,0,null,''));
+
+
+for(i in code)
+	WSH.echo(i,' ',code[i]);

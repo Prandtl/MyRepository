@@ -1,0 +1,8 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\bin\Debug\Drowning.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\obj\Debug\Drowning.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\obj\Debug\Drowning.Properties.Resources.resources
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\obj\Debug\Drowning.csproj.GenerateResource.Cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\bin\Debug\Drowning.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\bin\Debug\Drowning.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\obj\Debug\Drowning.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Drowning\Drowning\obj\Debug\Drowning.pdb

@@ -4,7 +4,7 @@ function code(s)
 	n=1;
 	for(i=0;i<=s.length-1;i++)
 	{
-		if (n>=255)
+		if (n>=127)
 		{
 			out=out+ '#' + String.fromCharCode(n) +s.charAt(i);
 			n=1;
@@ -79,7 +79,7 @@ function decode(s)
 	}
 	return out;
 }
-mode = WSH.Arguments(0);//дедлайн - 26 марта
+mode = WSH.Arguments(0);
 fso = new ActiveXObject("Scripting.FileSystemObject");
 fh = fso.OpenTextFile(WSH.Arguments(1));
 s = fh.ReadAll();

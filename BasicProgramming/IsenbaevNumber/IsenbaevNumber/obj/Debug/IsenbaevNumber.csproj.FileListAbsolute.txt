@@ -1,0 +1,6 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\IsenbaevNumber\IsenbaevNumber\bin\Debug\IsenbaevNumber.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\IsenbaevNumber\IsenbaevNumber\bin\Debug\IsenbaevNumber.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\IsenbaevNumber\IsenbaevNumber\bin\Debug\IsenbaevNumber.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\IsenbaevNumber\IsenbaevNumber\obj\Debug\IsenbaevNumber.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\IsenbaevNumber\IsenbaevNumber\obj\Debug\IsenbaevNumber.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\IsenbaevNumber\IsenbaevNumber\obj\Debug\IsenbaevNumber.pdb

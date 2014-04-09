@@ -7,6 +7,7 @@ for(i=0;i<str.length;i++)
 WSH.echo(alph.length);
 n=0;
 e=0;
+WSH.echo(alph.length)
 for(i in alph)
 {
 	WSH.echo(alph[i]);

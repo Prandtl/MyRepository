@@ -1,0 +1,6 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\MyFavoriteMartians\MyFavoriteMartians\bin\Debug\MyFavoriteMartians.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\MyFavoriteMartians\MyFavoriteMartians\bin\Debug\MyFavoriteMartians.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\MyFavoriteMartians\MyFavoriteMartians\bin\Debug\MyFavoriteMartians.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\MyFavoriteMartians\MyFavoriteMartians\obj\Debug\MyFavoriteMartians.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\MyFavoriteMartians\MyFavoriteMartians\obj\Debug\MyFavoriteMartians.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\MyFavoriteMartians\MyFavoriteMartians\obj\Debug\MyFavoriteMartians.pdb

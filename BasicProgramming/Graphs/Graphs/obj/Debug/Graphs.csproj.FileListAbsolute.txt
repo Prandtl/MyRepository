@@ -1,0 +1,6 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Graphs\Graphs\bin\Debug\Graphs.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Graphs\Graphs\bin\Debug\Graphs.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Graphs\Graphs\bin\Debug\Graphs.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Graphs\Graphs\obj\Debug\Graphs.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Graphs\Graphs\obj\Debug\Graphs.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\Graphs\Graphs\obj\Debug\Graphs.pdb

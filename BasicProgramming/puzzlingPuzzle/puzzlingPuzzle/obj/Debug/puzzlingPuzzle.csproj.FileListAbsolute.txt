@@ -1,0 +1,8 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\bin\Debug\puzzlingPuzzle.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\obj\Debug\puzzlingPuzzle.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\obj\Debug\puzzlingPuzzle.Properties.Resources.resources
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\obj\Debug\puzzlingPuzzle.csproj.GenerateResource.Cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\bin\Debug\puzzlingPuzzle.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\bin\Debug\puzzlingPuzzle.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\obj\Debug\puzzlingPuzzle.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\puzzlingPuzzle\puzzlingPuzzle\obj\Debug\puzzlingPuzzle.pdb

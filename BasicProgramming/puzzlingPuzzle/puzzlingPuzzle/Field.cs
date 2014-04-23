@@ -13,65 +13,93 @@ namespace puzzlingPuzzle
             return new GameField.Point(a.X + b.X, a.Y + b.Y);
         }
 
-        public static void Swap(this GameField.Tile a, GameField.Tile b)
+        public static GameField.Point Sub(this GameField.Point a, GameField.Point b)
         {
-            var t = new GameField.Point(a.position.X, a.position.Y);
-            a.position = b.position;
-            b.position = t;
+            return new GameField.Point(a.X - b.X, a.Y - b.Y);
+        }
+
+        public static bool CheckEquality(this int[][] a, int[][] b)
+        {
+            if (a.Length != b.Length)
+                return false;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (!a[i].SequenceEqual(b[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 
     public class GameField
     {
-        public Tile[] Field;
-        public Tile zeroTile;
+        public int[][] Field;
+        public Point zeroTile;
 
-        public GameField()
+        public static int[][] initialState = new int[][]{new int[]{0,1,2},
+                                                  new int[]{3,4,5},
+                                                  new int[]{6,7,8}};
+
+        public GameField(int[][] field)
         {
-            Field = new Tile[]{new Tile(0,0," "),
-                               new Tile(1,0,"1"),
-                               new Tile(2,0,"2"),
-                               new Tile(0,1,"3"),
-                               new Tile(1,1,"4"),
-                               new Tile(2,1,"5"),
-                               new Tile(0,2,"6"),
-                               new Tile(1,2,"7"),
-                               new Tile(2,2,"8")};
-            zeroTile=Field[0];
+            Field = field;
+            zeroTile = GetPosition(field, 0);
         }
 
-        public Tile[] GetNeighbours(Tile tile)
+        public static Point GetPosition(int[][] field, int val)
         {
-            var a = new Point[]{new Point(-1,0),
-                                new Point(1,0),
-                                new Point(0,1),
-                                new Point(0,-1)}.Select(x => x.Add(tile.position))
-                                                .Where(x => (x.X >= 0 && x.X < 3) && (x.Y >= 0 && x.Y < 3));
-            return Field.Where(x => a.Contains(x.position)).ToArray();
+            for (int i = 0; i < field.Length; i++)
+            {
+                for (int j = 0; j < field[i].Length; j++)
+                {
+                    if (field[i][j] == val)
+                        return new GameField.Point(i, j);
+                }
+            }
+            throw new System.Exception("no value like this in the field!");
         }
+
+        public int[][] Swap(Point a, Point b)
+        {
+
+            int[][] Swapped = new int[3][];
+            for (int i = 0; i < 3; i++)
+            {
+                Swapped[i] = (int[])Field[i].Clone();
+            }
+            Swapped[a.X][a.Y] = Field[b.X][b.Y];
+            Swapped[b.X][b.Y] = Field[a.X][a.Y];
+            return Swapped;
+
+        }
+
+        public Point[] GetNeighbours()
+        {
+
+            var a = new Point[]{new Point(1,0),
+                               new Point(-1,0),
+                               new Point(0,1),
+                               new Point(0,-1)};
+            a.Select(x => x.Add(zeroTile))
+             .Where(point => (point.X >= 0 && point.X < 3) && (point.Y >= 0 && point.Y < 3))
+             .ToArray();
+
+            return a;
+        }
+
+
 
         public class Point
         {
-            public int X { get; set; }
-            public int Y { get; set; }
+            public int X;
+            public int Y;
 
-            public Point(int x,int y)
+            public Point(int x, int y)
             {
                 X = x;
                 Y = y;
-            }
-
-            
-        }
-        public class Tile
-        {
-            public Point position { get; set; }
-            public string value;
-
-            public Tile(int x,int y, string val)
-            {
-                position = new Point(x, y);
-                value = val;
             }
         }
 

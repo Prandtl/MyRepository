@@ -1,0 +1,8 @@
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\bin\Debug\GiantGraph.exe.config
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\bin\Debug\GiantGraph.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\bin\Debug\GiantGraph.pdb
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\obj\Debug\GiantGraph.csprojResolveAssemblyReference.cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\obj\Debug\GiantGraph.Properties.Resources.resources
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\obj\Debug\GiantGraph.csproj.GenerateResource.Cache
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\obj\Debug\GiantGraph.exe
+C:\Users\Василий\Desktop\MyRepository\BasicProgramming\GiantGraph\GiantGraph\obj\Debug\GiantGraph.pdb

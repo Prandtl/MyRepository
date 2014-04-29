@@ -1,10 +1,57 @@
 <html>
+
 <head>
 <title>Hamming</title>
+</head>
+
+<body>
+<H1>Hamming encode</H2>
+<input type='text' id='inp_mes' maxlength=4> Входное ссобщение
+<br /><br />
+<input type='button' value='Code' onclick='code()'>
+<br /><br />
+<input type='text' id='cod_mes' maxlength=7> Закодированное ссобщение
+<br /><br />
+<input type='button' value='Decode' onclick='decode()'>
+<br /><br />
+<input type='text' id='dec_mes' maxlength=4> Раскодированное сообщение
+<br /><br />
+</body>
+
 <script>
-//alert('hello')
-function code()
-{
+
+document.getElementById('inp_mes').onkeypress = function(e) {
+	e = e || event;
+	if (e.ctrlKey || e.altKey || e.metaKey) return;
+	var chr = getChar(e);
+	if (chr == null) return;
+	if (chr < '0' || chr > '1') return false;
+}
+document.getElementById('cod_mes').onkeypress = function(e) {
+	e = e || event;
+	if (e.ctrlKey || e.altKey || e.metaKey) return;
+	var chr = getChar(e);
+	if (chr == null) return;
+	if (chr < '0' || chr > '1') return false;
+}
+document.getElementById('dec_mes').onkeypress = function(e) {
+	return false;
+}
+
+function getChar(event) {
+	if (event.which == null) {
+		if (event.keyCode < 32) return null;
+		return String.fromCharCode(event.keyCode)
+	}
+	if (event.which!=0 && event.charCode!=0) {
+		if (event.which < 32) return null;
+		return String.fromCharCode(event.which)
+	}
+	return null;
+}
+
+
+function code(){
 	str=document.all.inp_mes.value;
 	mas=str.split('');
 	for(i=0;i<mas.length;i++)
@@ -12,17 +59,33 @@ function code()
 	mas[4]=(mas[0]+mas[1]+mas[3])%2;
 	mas[5]=(mas[0]+mas[2]+mas[3])%2;
 	mas[6]=(mas[1]+mas[2]+mas[3])%2;
-	document.all.cod_mes.value = mas;
+	str=str+mas[4]+mas[5]+mas[6];
+	document.all.cod_mes.value = str;
+}
+
+function decode(){
+	str=document.all.cod_mes.value;
+	mas=str.split('');
+	for(i=0;i<mas.length;i++)
+		mas[i]=parseInt(mas[i]);
+	sum=new Array;
+	sum[4]=(mas[0]+mas[1]+mas[3])%2;
+	sum[5]=(mas[0]+mas[2]+mas[3])%2;
+	sum[6]=(mas[1]+mas[2]+mas[3])%2;
+	if ((sum[4]!=mas[4]&&sum[5]!=mas[5])&&sum[6]!=sum[6])
+		mas[3]=(mas[3]+1)%2;
+	else if (sum[4]!=mas[4]&&sum[5]!=mas[5])
+		mas[0]=(mas[0]+1)%2;
+	else if (sum[4]!=mas[4]&&sum[6]!=mas[6])
+		mas[1]=(mas[1]+1)%2;
+	else if (sum[6]!=mas[6]&&sum[5]!=mas[5])
+		mas[2]=(mas[2]+1)%2;
+	str='';
+	for(i=0;i<4;i++)
+		str=str+mas[i];
+		
+	document.all.dec_mes.value = str;
 }
 </script>
-</head>
-<body>
-<H1>Hamming encode</H2>
-<input type='text' id='inp_mes'> Входное ссобщение
-<br /><br />
-<input type='button' value='Code' onclick='code()'>
-<br /><br />
-<input type='text' id='cod_mes'> Закодированное ссобщение
-<br /><br />
-</body>
+
 </html>

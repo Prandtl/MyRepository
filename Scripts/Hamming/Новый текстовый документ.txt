@@ -1,12 +1,66 @@
-|________________| исх сообщение
-(0 и 1) example at solod
-|code|
-|________________| результат
-|decode|
-|________________| поиск ошибки
+<html>
+
+<head>
+<title>Hamming</title>
+</head>
+
+<body>
+<H1>Hamming encode</H2>
+<input type='text' id='inp_mes' maxlength=4> Входное ссобщение
+<br /><br />
+<input type='button' value='Code' onclick='code()'>
+<br /><br />
+<input type='text' id='cod_mes' maxlength=7> Закодированное ссобщение
+<br /><br />
+<input type='button' value='Decode' onclick='decode()'>
+<br /><br />
+<input type='text' id='dec_mes' maxlength=4> Раскодированное сообщение
+<br /><br />
+</body>
+
+<script>
+
+document.getElementById('inp_mes').onkeypress = function(e) {
+	e = e || event;
+	if (e.ctrlKey || e.altKey || e.metaKey) return;
+	var chr = getChar(e);
+	if (chr == null) return;
+	if (chr < '0' || chr > '1') return false;
+}
+document.getElementById('cod_mes').onkeypress = function(e) {
+	e = e || event;
+	if (e.ctrlKey || e.altKey || e.metaKey) return;
+	var chr = getChar(e);
+	if (chr == null) return;
+	if (chr < '0' || chr > '1') return false;
+}
+document.getElementById('dec_mes').onkeypress = function(e) {
+	return false;
+}
+
+function getChar(event) {
+	if (event.which == null) {
+		if (event.keyCode < 32) return null;
+		return String.fromCharCode(event.keyCode)
+	}
+	if (event.which!=0 && event.charCode!=0) {
+		if (event.which < 32) return null;
+		return String.fromCharCode(event.which)
+	}
+	return null;
+}
 
 
-Add some CSS
+function code(){
+	str=document.all.inp_mes.value;
+	mas=str.split('');
+	for(i=0;i<mas.length;i++)
+		mas[i]=parseInt(mas[i]);
+	mas[4]=(mas[0]+mas[1]+mas[3])%2;
+	mas[5]=(mas[0]+mas[2]+mas[3])%2;
+	mas[6]=(mas[1]+mas[2]+mas[3])%2;
+	document.all.cod_mes.value = mas;
+}
+</script>
 
-http equiv content type... для борьбы с раком текста
-
+</html>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.IO;
 
 namespace GiantGraph
 {
@@ -22,19 +23,21 @@ namespace GiantGraph
             chart.Dock = DockStyle.Fill;
             Controls.Add(chart);
 
-            var graph = new RandomGraph();
+            var graph = new ListBasedRandomGraph();
             for (int i = 0; i < 10000; i++)
             {
-                graph.AddVertice(2);
+                graph.AddVertice(1);
             }
-            
+
+            var graphToDraw = graph.graph.OrderByDescending(x => x.Count).ToList();
 
             var series = new Series();
-            for (int i = 0; i < graph.graph.Count;i++)
-                series.Points.Add(new DataPoint(i, graph.graph[i].Count));
+            for (int i = 0; i < graphToDraw.Count;i++)
+                series.Points.Add(new DataPoint(i, Math.Log(graphToDraw[i].Count)));
             series.ChartType = SeriesChartType.FastLine;
 
             chart.Series.Add(series);
+            graph.GraphToFile();
         }
     }
 
@@ -72,5 +75,57 @@ namespace GiantGraph
             }
         }
 
+    }
+
+    class ListBasedRandomGraph
+    {
+        public List<List<int>> graph;
+
+        List<int> used;
+
+        Random rand = new Random();
+
+        public ListBasedRandomGraph()
+        {
+            graph = new List<List<int>>();
+            graph.Add(new List<int>() { 1 });
+            graph.Add(new List<int>() { 0 });
+            used = new List<int>() { 0, 1 };
+        }
+
+        public void AddVertice(int M)
+        {
+            graph.Add(new List<int>());
+            var last=graph.Last();
+            for (int k = 0; k < M; k++)
+            {
+                var a = rand.Next(0, used.Count);
+                if (!last.Contains(used[a]))
+                {
+                    last.Add(used[a]);
+                    used.Add(used[a]);
+                    graph[used[a]].Add(graph.Count - 1);
+                    used.Add(graph.Count - 1);
+                }
+                else
+                    k--;
+            }
+        }
+
+        public void GraphToFile()
+        {
+            var sw = new StreamWriter("Graph.dot");
+            sw.WriteLine("graph \"\"{");
+            for (int i = 0; i < graph.Count; i++)
+            {
+                for (int j = 0; j < graph[i].Count; j++)
+                {
+                    if (graph[i][j] > i)
+                        sw.WriteLine("\t{0}--{1}", i, graph[i][j]);
+                }
+            }
+            sw.WriteLine("}");
+            sw.Close();
+        }
     }
 }

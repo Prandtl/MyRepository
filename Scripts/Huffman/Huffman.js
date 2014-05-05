@@ -57,8 +57,6 @@ for(j=0;j<length-1;j++)
 
 }
 
-	
-
 code = new Array();
 for(i=0;i<length;i++)
 {
@@ -71,6 +69,10 @@ for(i=0;i<length;i++)
 	}
 }
 
+if (tree.length==1)
+{
+	code[tree[0].name]=0;
+}
 
 for(i in code)
 	WSH.echo(i,' ',code[i]);

@@ -1,6 +1,7 @@
 var orders = new Array();
 var mem =new Array();
 var nesting=new Array();
+var spec=new Array();
 
 var fso = new ActiveXObject('Scripting.FileSystemObject');
 var text_prog= fso.OpenTextFile(WSH.Arguments(0));
@@ -62,6 +63,16 @@ while(orders[i]!='exit')
 					i++
 				i++
 				break
+			}
+			i++
+			break
+		case 'modulo':
+			spec[0]=mem[order[1]]
+			spec[1]=mem[order[2]]
+			if(spec[1]!=0)
+			{
+				mem[order[4]]=spec[0]%spec[1]
+				mem[order[3]]=(spec[0]-mem[order[4]])/spec[1]
 			}
 			i++
 			break

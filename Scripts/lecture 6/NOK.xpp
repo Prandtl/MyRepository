@@ -1,0 +1,14 @@
+input 1
+input 2
+put 6 0
+mult 1 2 5
+ifDifferent 6 4
+modulo 1 2 3 4
+clone 2 1
+clone 4 2
+jump 5
+end
+modulo 5 1 7 8
+output 7 
+exit
+

@@ -116,7 +116,7 @@ function toRPN(a){
 	return res
 }
 
-a=stringToArray('( 1 + 2 * ( 3 + 4 * 2 ) + 3 ) * 2')
+a=stringToArray('12 * 11 + 1 / 44 + 56 - 3')
 b=toRPN(a)
 WSH.echo(b)
 WSH.echo(solve(b))

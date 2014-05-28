@@ -1,58 +1,101 @@
-function GetBadSymbolTable(a){
+function PreBMbc(a){
 	table=new Array()
+	WSH.echo('BC starts')
 	for (i=0;i<a.length;i++)
 	{
-		table[a.charAt(i)]=a.length+i-1;
+		table[a.charAt(i)]=a.length-1-i;
+		WSH.echo(a.charAt(i),table[a.charAt(i)])
 	}
+	
+	WSH.echo('BC is done: ')
+	for (i in table)
+		WSH.echo(i,table[i])
 	return table
 }
 
-function PrefixFunc(a){
-	l=a.length
-	p=new Array(l)
-	p[0]=0
-	k=0
-	for( i=1;i<l;i++)
+function IsPrefix(x,p){
+	j=0
+	for(q=p;q<x.length;q++)
 	{
-		while(k>0&&a.charAt(i)!=a.charAt(k))
+		if(x.charAt(q)!=x.charAt(j))
+			return false
+	}
+	return true
+}
+
+function SuffixLength(x,p){
+	l=0
+	i=p
+	j=x.length-1
+	while(i>=0&&x.charAt(i)==x.charAt(j))
+	{
+		l++
+		i--
+		j--
+	}
+	return l
+} 	
+
+function PreBMgs(x){
+	WSH.echo('GS starts')
+	
+	m=x.length
+	table=new Array()
+	lastPrefixPosition=m
+	for(i=m-1;i>=0;i-=1)
+	{	
+		if(IsPrefix(x,i+1))
 		{
-			k=p[k-1]
+			lastPrefixPosition=i+1
 		}
-		if(a.charAt(i)==a.charAt(k))
-			k++
-		p[i]=k
+		table[m-1-i]=lastPrefixPosition-i+m-1
 	}
-	for(i in p)
-		p[i]=parseFloat(p[i])
-	return p
+	for(i=0;i<m-1;i++)
+	{
+		slen=SuffixLength(x,i)
+		table[slen]=m-1-i+slen
+	}
+	WSH.echo('GS is done:')
+	for (i in table)
+		WSH.echo(i,table[i])
+	return table
+}	
+
+function BM(y,x){
+	res= new Array()
+	
+	n=y.length
+	m=x.length
+	if(m==0)
+		return res
+	
+	WSH.echo('preBM starts')
+	bmBC=PreBMbc(x)
+	bmGS=PreBMgs(x)
+	WSH.echo('preBM ended successfully')
+	WSH.echo()
+	
+	for(i=m-1;i<n;i++)
+	{
+		j=m-1
+		while(x.charAt(j)==x.charAt(i)&&(i>=0&&j>=0))
+		{
+			WSH.echo('i: ',i,'; ',x.charAt(i))
+			WSH.echo('j: ',j,'; ',x.charAt(j))
+			WSH.echo('-------------------------')
+			if (j==0)
+				res.push(i)
+			i--
+			j--
+		}
+		if (bmBC[y.charAt(i)]==undefined)
+			bcShift=m
+		else
+			bcShift=bmBC[y.charAt(i)]
+		i+=Math.max(bmGS[m-1-j],bcShift)
+	}
+	
+	return res
 }
 
-function StringReverse(a){
-	s=''
-	for (i=a.length-1;i>=0;i--)
-	{
-		s+=a.charAt(i)
-	}
-	return s
-}
-
-function SuffShift(a){
-	m=a.length-1
-	pi=PrefixFunc(a)
-	pi1=PrefixFunc(StringReverse(a))
-	suffshift=new Array()
-	for (j=0;j<=m;j++)
-	{
-		suffshift[j]=a.length-pi[m]
-		WSH.echo(suffshift[j])
-	}
-	for (i=1;i<=m;i++)
-	{
-		j=a.length-pi1[i]
-		suffshift[j]=Math.min(suffshift[j],i-pi1[i])
-		WSH.echo(suffshift[j])
-	}
-	return suffshift
-
-}
-WSH.echo(SuffShift('abcdadcd'))
+WSH.echo(BM('abeccaabadbabbad','abbad'))

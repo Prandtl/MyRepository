@@ -1,0 +1,12 @@
+c:\users\vasiliy\documents\visual studio 2012\Projects\BFS\BFS\bin\Debug\BFS.exe.config
+c:\users\vasiliy\documents\visual studio 2012\Projects\BFS\BFS\bin\Debug\BFS.exe
+c:\users\vasiliy\documents\visual studio 2012\Projects\BFS\BFS\bin\Debug\BFS.pdb
+c:\users\vasiliy\documents\visual studio 2012\Projects\BFS\BFS\obj\Debug\BFS.csprojResolveAssemblyReference.cache
+c:\users\vasiliy\documents\visual studio 2012\Projects\BFS\BFS\obj\Debug\BFS.exe
+c:\users\vasiliy\documents\visual studio 2012\Projects\BFS\BFS\obj\Debug\BFS.pdb
+C:\Users\Vasiliy\Desktop\MyRepository\BasicProgramming\2nd semester\BFS\BFS\bin\Debug\BFS.exe.config
+C:\Users\Vasiliy\Desktop\MyRepository\BasicProgramming\2nd semester\BFS\BFS\obj\Debug\BFS.exe
+C:\Users\Vasiliy\Desktop\MyRepository\BasicProgramming\2nd semester\BFS\BFS\obj\Debug\BFS.pdb
+C:\Users\Vasiliy\Desktop\MyRepository\BasicProgramming\2nd semester\BFS\BFS\bin\Debug\BFS.exe
+C:\Users\Vasiliy\Desktop\MyRepository\BasicProgramming\2nd semester\BFS\BFS\bin\Debug\BFS.pdb
+C:\Users\Vasiliy\Desktop\MyRepository\BasicProgramming\2nd semester\BFS\BFS\obj\Debug\BFS.csprojResolveAssemblyReference.cache
